@@ -3,12 +3,17 @@
 import Link from "next/link";
 
 export default function Home() {
+  const handleScroll = () => {
+    document
+      .getElementById("second-section")
+      .scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
-      <header className="  py-6 bg-white fixed top-0 left-0 right-0   z-10">
+      <header className="  py-6 bg-white fixed top-0 left-0 right-0   z-20">
         <div className="flex w-[90%] lg:w-[80%] max-w-7xl  mx-auto justify-between items-center">
           <div className="flex items-center">
-            <div className="flex items-center">
+            <Link href="/dacade" className="inline-flex items-center">
               <img
                 src="/icons/logo-sm.svg"
                 className="w-[30px] lg:w-[39px]  inline"
@@ -17,9 +22,9 @@ export default function Home() {
               <span className="hidden md:inline text-txt-bg text-lg ml-2 font-semibold font-segoe">
                 Dacade
               </span>
-            </div>
+            </Link>
             <span className="w-0.5 h-[30px] mx-1.5 bg-gray-200"></span>
-            <div>
+            <Link href="/near-balkan">
               <img
                 src="/icons/second-logo-sm.svg"
                 className="lg:hidden"
@@ -30,14 +35,14 @@ export default function Home() {
                 className="hidden lg:block"
                 alt="Near balkans logo"
               />
-            </div>
+            </Link>
           </div>
           <div className="flex">
             <button type="button" className="hidden text-lg text-txt-color lg:block mr-12">
               Start The Course
             </button>
             <Link
-              href="/"
+              href="/wallet"
               className="py-3 px-5 bg-zinc-700 text-white text-lg rounded-full tracking-wide"
             >
               Create wallet
@@ -48,8 +53,8 @@ export default function Home() {
       <main>
         <section className="relative h-screen isolate">
           <div className="h-[600px] pt-48 relative">
-            <div className="w-[50%] h-full bg-hero-bg absolute -top-[450px] opacity-40"></div>
-            <div className="w-[50%] h-full bg-hero-bg absolute -top-[450px] opacity-40 right-0"></div>
+            <div className="w-[50%] h-full bg-hero-bg absolute -top-[300] lg:-top-[450px] opacity-40"></div>
+            <div className="w-[50%] h-full bg-hero-bg absolute -top-[300px] lg:-top-[450px] opacity-40 right-0"></div>
             <div className="pt-12 lg:pt-24 px-6 relative z-10  pb-24 max-w-[910px] mx-auto">
               <h1 className=" max-w-[180px] lg:max-w-none lg:text-center mx-auto text-txt-color text-4xl lg:text-7xl font-semibold leading-[52px]">
                 Get{" "}
@@ -66,16 +71,21 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <img
-                src="/icons/down-arrow.svg"
-                className="text-center inline"
-                alt="down arrow"
-              />
+              <button onClick={handleScroll}>
+                <img
+                  src="/icons/down-arrow.svg"
+                  className="text-center inline"
+                  alt="down arrow"
+                />
+              </button>
             </div>
           </div>
         </section>
-        <section>
-          <h2 className=" text-[32px] lg:text-5xl text-txt-color mt-16 text-center leading-8 font-sans-medium">
+        <section id="second-section">
+          <h2
+            className=" text-[32px] lg:text-5xl text-txt-color mt-16 text-center leading-8 font-sans-medium"
+            
+          >
             Making your NEAR <br /> learning easy.
           </h2>
           <div className="flex flex-col lg:flex-row-reverse gap-4 items-center mt-16 lg:mt-44 max-w-[940px] justify-between mx-auto relative isolate">
@@ -200,11 +210,15 @@ export default function Home() {
       <footer className="bg-white w-full relative z-10">
         <div className="px-[23px] py-24 lg:w-[71%] mx-auto">
           <p className="text-lg text-center">
-            Visit <span className="font-sans-medium">nearbalkans.org</span> and make sure to follow us on our social and
-            community channels!
+            Visit <span className="font-sans-medium">nearbalkans.org</span> and
+            make sure to follow us on our social and community channels!
           </p>
           <div className="pt-10 flex justify-between lg:justify-center items-center">
-            <img src="/icons/footer-logo.svg" className="hidden lg:block" alt="logo" />
+            <img
+              src="/icons/footer-logo.svg"
+              className="hidden lg:block"
+              alt="logo"
+            />
             <div className="hidden lg:block w-0.5 bg-gray-200 mx-[61px] h-[38px]"></div>
             <img src="/icons/twitter.svg" className="px-3" alt="twitter" />
             <img src="/icons/discord.svg" className="px-3" alt="discord" />
@@ -213,7 +227,6 @@ export default function Home() {
             <img src="/icons/linkedin.svg" className="px-3" alt="linkedin" />
             <img src="/icons/instagram.svg" className="px-3" alt="instagram" />
             <img src="/icons/medium.svg" className="px-3" alt="medium" />
-
           </div>
           <div className="pt-10 flex flex-col items-center lg:items-start lg:flex-row gap-x-10 text-lg cursor-pointer text-txt-color">
             <p>NEAR Balkans 2022</p>
@@ -222,7 +235,10 @@ export default function Home() {
             <p>Cookie Policy</p>
             <p>Terms & Conditions</p>
           </div>
-          <p className="pt-[34px] text-center text-lg text-txt-color">NEAR Balkans Hub: Bosnia & Herzegovina, Bulgaria, Croatia, Montenegro, North Macedonia, Serbia, and Slovenia</p>
+          <p className="pt-[34px] text-center text-lg text-txt-color">
+            NEAR Balkans Hub: Bosnia & Herzegovina, Bulgaria, Croatia,
+            Montenegro, North Macedonia, Serbia, and Slovenia
+          </p>
         </div>
       </footer>
     </>
