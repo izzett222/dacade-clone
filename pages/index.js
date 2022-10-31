@@ -66,7 +66,7 @@ export default function Home() {
       <main>
         <section className="relative h-screen isolate">
           <div className="h-[600px] pt-48 relative">
-            <div className="w-[50%] h-full bg-hero-bg absolute -top-[300] lg:-top-[450px] opacity-40"></div>
+            <div className="w-[50%] h-full bg-hero-bg absolute -top-[300px] lg:-top-[450px] opacity-40"></div>
             <div className="w-[50%] h-full bg-hero-bg absolute -top-[300px] lg:-top-[450px] opacity-40 right-0"></div>
             <div className="pt-12 lg:pt-24 px-6 relative z-10  pb-24 max-w-[910px] mx-auto">
               <h1 className=" max-w-[180px] lg:max-w-none lg:text-center mx-auto text-txt-color text-4xl lg:text-7xl font-semibold leading-[52px]">
