@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 /* eslint-disable @next/next/no-img-element */
+import Head from "next/head";
 import Link from "next/link";
 
 export default function Home() {
@@ -10,6 +11,15 @@ export default function Home() {
   };
   return (
     <>
+      <Head>
+        <title>NEAR dev 101</title>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://dacade-nearbalkans.netlify.app/fav-icons/favicon-32x32.png"
+        ></link>
+      </Head>
       <header className="  py-6 bg-white fixed top-0 left-0 right-0   z-20">
         <div className="flex w-[90%] lg:w-[80%] max-w-7xl  mx-auto justify-between items-center">
           <div className="flex items-center">
@@ -38,7 +48,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="flex">
-            <button type="button" className="hidden text-lg text-txt-color lg:block mr-12">
+            <button
+              type="button"
+              className="hidden text-lg text-txt-color lg:block mr-12"
+            >
               Start The Course
             </button>
             <Link
@@ -82,10 +95,7 @@ export default function Home() {
           </div>
         </section>
         <section id="second-section">
-          <h2
-            className=" text-[32px] lg:text-5xl text-txt-color mt-16 text-center leading-8 font-sans-medium"
-            
-          >
+          <h2 className=" text-[32px] lg:text-5xl text-txt-color mt-16 text-center leading-8 font-sans-medium">
             Making your NEAR <br /> learning easy.
           </h2>
           <div className="flex flex-col lg:flex-row-reverse gap-4 items-center mt-16 lg:mt-44 max-w-[940px] justify-between mx-auto relative isolate">
